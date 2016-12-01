@@ -31,17 +31,7 @@ public class BookTester {
         Query query = em.createQuery("SELECT b FROM Book b");
         List<Author> author = query.getResultList();
 
-        for (Book book : book) {
-            System.out.println("Author: " + book.getName());
-        }
-
-        Query authorQuery = em.createQuery("SELECT a FROM Author a");
-        List<Author> author = authorQuery.getResultList();
-
-        for (Author author : author) {
-            System.out.println("Auhtor: " + author.getName() + " has book: " + author.getBook().getName());
-        }
-
+        
         em.close();
     }
 
