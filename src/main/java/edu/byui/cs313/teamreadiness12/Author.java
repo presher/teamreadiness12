@@ -7,7 +7,7 @@ package edu.byui.cs313.teamreadiness12;
 
 /**
  *
- * @author Jason
+ * @author Jason code taken form major example
  */
 
 import java.io.Serializable;

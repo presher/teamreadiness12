@@ -7,13 +7,12 @@ package edu.byui.cs313.teamreadiness12;
  */
 /**
  *
- * @author Jason
+ * @author Jason code taken form major example
  */
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import javax.persistence.Query;
 
 public class BookTester {
 
@@ -24,15 +23,36 @@ public class BookTester {
 
         Book book = em.find(Book.class, 1);
         System.out.println("Book: " + book.getName());
-
-        em.getTransaction().begin();
-
         
-        Query query = em.createQuery("SELECT b FROM Book b");
-        List<Author> author = query.getResultList();
+        Author author = em.find(Author.class, 1);
+        System.out.println("Auhtor: " + author.getName());
 
+        em.getTransaction().begin(); 
+
+        Author newAuthor = new Author();
+        newAuthor.getName();
+
+        em.persist(newAuthor);
+
+        em.getTransaction().commit();
+        
+        em.getTransaction().begin(); 
+
+        Book newBook = new Book();
+        newBook.getName();
+
+        em.persist(newBook);
+
+        em.getTransaction().commit();
         
         em.close();
+        
+        
+        
+        
+
+        
+        
     }
 
 }
